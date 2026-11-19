@@ -1,0 +1,14 @@
+# Databricks Asset Bundle: deploys the notebooks and the pipeline job.
+# Usage: databricks bundle deploy -t dev && databricks bundle run pipeline_vendas_estoque -t dev
+bundle:
+  name: lakehouse_medallion_sales_poc
+
+include:
+  - resources/*.yml
+
+targets:
+  dev:
+    mode: development
+    default: true
+    # workspace:
+    #   host: https://<your-workspace>.cloud.databricks.com
